@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">TriviaApp</string>
+    <string name="trueButton">True</string>
+    <string name="falseButton">False</string>
+    <string name="nextButton">Next</string>
+    <string name="question">Are you happy now?</string>
+    <string name="questionNumber">Question: %d/%d"</string>
+    <string name="score">Score: %d</string>
+    <string name="resetScore">Reset score</string>
+    <string name="previousButton">Previous</string>
+    <string name="bestScore">Best score: %d</string>
+</resources>
