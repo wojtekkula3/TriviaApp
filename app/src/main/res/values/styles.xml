@@ -3,8 +3,10 @@
 
     <style name="buttonStyle">
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:backgroundTint">#0F1430</item>
+        <item name="android:backgroundTint">@color/dark_blue</item>
         <item name="android:elevation">5dp</item>
         <item name="android:fontFamily">monospace</item>
     </style>
+
+
 </resources>

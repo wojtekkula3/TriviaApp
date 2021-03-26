@@ -1,24 +1,20 @@
 package com.example.triviaapp;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingComponent;
 import androidx.databinding.DataBindingUtil;
 
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Display;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.Toast;
 
 import com.example.triviaapp.data.AsyncResponse;
 import com.example.triviaapp.data.Repository;
 import com.example.triviaapp.databinding.ActivityMainBinding;
 import com.example.triviaapp.model.Question;
-import com.google.android.material.snackbar.BaseTransientBottomBar;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
@@ -67,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
         binding.trueButton.setOnClickListener(view -> {
             if(questionList.get(currentQuestionNumber).isAnwsered())
             {
-                Snackbar.make(binding.questionCardView, "You already answered",Snackbar.LENGTH_LONG)
+                Snackbar.make(binding.questionCardView, getString(R.string.alreadyAnswered),Snackbar.LENGTH_LONG)
                         .setTextColor(Color.RED)
                         .show();
             }
@@ -82,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
         binding.falseButton.setOnClickListener( view -> {
             if(questionList.get(currentQuestionNumber).isAnwsered())
             {
-                Snackbar.make(binding.questionCardView, "You already answered",Snackbar.LENGTH_LONG)
+                Snackbar.make(binding.questionCardView, getString(R.string.alreadyAnswered),Snackbar.LENGTH_LONG)
                         .setTextColor(Color.RED)
                         .show();            }
             else
@@ -175,6 +171,7 @@ public class MainActivity extends AppCompatActivity {
     {
         Animation shake = AnimationUtils.loadAnimation(this, R.anim.shake_animation);
         binding.questionCardView.setAnimation(shake);
+
 
         shake.setAnimationListener(new Animation.AnimationListener() {
             @Override

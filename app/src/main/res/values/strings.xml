@@ -9,4 +9,5 @@
     <string name="resetScore">Reset score</string>
     <string name="previousButton">Previous</string>
     <string name="bestScore">Best score: %d</string>
+    <string name="alreadyAnswered">You already answered</string>
 </resources>

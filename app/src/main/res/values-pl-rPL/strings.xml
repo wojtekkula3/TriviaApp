@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TriviaApp</string>
+    <string name="trueButton">Prawda</string>
+    <string name="falseButton">Fałsz</string>
+    <string name="nextButton">Następne</string>
+    <string name="question">Czy jesteś szczęśliwy?</string>
+    <string name="questionNumber">Pytanie: %d/%d</string>
+    <string name="score">Wynik: %d</string>
+    <string name="resetScore">Resetuj wynik</string>
+    <string name="previousButton">Poprzednie</string>
+    <string name="bestScore">Najlepszy wynik: %d</string>
+    <string name="alreadyAnswered">Już odpowiedziałeś na to pytanie</string>
+</resources>
