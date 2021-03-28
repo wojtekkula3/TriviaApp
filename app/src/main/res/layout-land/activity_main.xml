@@ -18,46 +18,55 @@
         android:background="#1E2651"
         tools:context=".MainActivity">
 
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.6" />
+
         <TextView
             android:id="@+id/triviaTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
             android:fontFamily="monospace"
             android:text="Trivia"
             android:textColor="@color/light_gray"
             android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/questionCardView"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.13999999" />
 
         <TextView
             android:id="@+id/questionNumberTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
             android:fontFamily="monospace"
             android:text="@string/questionNumber"
             android:textColor="@color/white"
             android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/questionCardView"
+            app:layout_constraintEnd_toStartOf="@+id/guideline"
             app:layout_constraintHorizontal_bias="0.42"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/triviaTextView" />
+            app:layout_constraintTop_toBottomOf="@+id/triviaTextView"
+            app:layout_constraintVertical_bias="0.65" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/questionCardView"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="180dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
             android:backgroundTint="#30396C"
             app:cardCornerRadius="10dp"
             app:cardElevation="10dp"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideline"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/questionNumberTextView">
+            app:layout_constraintTop_toTopOf="parent">
 
             <TextView
                 android:id="@+id/questionTextView"
@@ -77,23 +86,22 @@
             style="@style/buttonStyle"
             android:layout_width="130dp"
             android:layout_height="50dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="30dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="20dp"
             android:text="@string/trueButton"
             android:textColor="#4CAF50"
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/falseButton"
             app:layout_constraintHorizontal_chainStyle="packed"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/questionCardView" />
+            app:layout_constraintStart_toEndOf="@+id/questionCardView"
+            app:layout_constraintTop_toTopOf="@+id/questionCardView" />
 
         <Button
             android:id="@+id/falseButton"
             style="@style/buttonStyle"
             android:layout_width="130dp"
             android:layout_height="50dp"
-            android:layout_marginTop="21dp"
             android:elevation="5dp"
             android:text="@string/falseButton"
             android:textColor="#D13E3E"
@@ -101,17 +109,16 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/trueButton"
-            app:layout_constraintTop_toBottomOf="@+id/questionCardView" />
+            app:layout_constraintTop_toTopOf="@+id/trueButton" />
 
         <Button
             android:id="@+id/nextButton"
             style="@style/buttonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="40dp"
             android:backgroundTint="@color/dark_blue"
             android:text="@string/nextButton"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/falseButton"
             app:layout_constraintTop_toTopOf="@+id/previousButton" />
 
         <Button
@@ -119,48 +126,47 @@
             style="@style/buttonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
+            android:layout_marginTop="32dp"
             android:backgroundTint="@color/dark_blue"
             android:text="@string/previousButton"
-            app:layout_constraintBottom_toTopOf="@+id/scoreTextView"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/trueButton"
-            app:layout_constraintVertical_bias="0.73" />
+            app:layout_constraintEnd_toEndOf="@+id/trueButton"
+            app:layout_constraintTop_toBottomOf="@+id/trueButton" />
 
         <TextView
             android:id="@+id/scoreTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
+            android:layout_marginStart="16dp"
             android:fontFamily="monospace"
             android:text="@string/score"
             android:textColor="#FFFFFF"
             android:textSize="18sp"
-            app:layout_constraintBottom_toTopOf="@+id/bestScoreTextView"
-            app:layout_constraintStart_toStartOf="@+id/bestScoreTextView" />
+            app:layout_constraintStart_toEndOf="@+id/resetScoreButton"
+            app:layout_constraintTop_toTopOf="@+id/resetScoreButton" />
 
         <TextView
             android:id="@+id/bestScoreTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
+            android:layout_marginStart="16dp"
             android:fontFamily="monospace"
             android:text="@string/bestScore"
             android:textColor="#FFFFFF"
             android:textSize="16sp"
-            app:layout_constraintBottom_toTopOf="@+id/resetScoreButton"
-            app:layout_constraintStart_toStartOf="@+id/resetScoreButton" />
+            app:layout_constraintStart_toEndOf="@+id/resetScoreButton"
+            app:layout_constraintTop_toBottomOf="@+id/scoreTextView" />
 
         <Button
             android:id="@+id/resetScoreButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
-            android:layout_marginBottom="30dp"
             android:backgroundTint="#0F1430"
             android:text="@string/resetScore"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/questionCardView" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
 </layout>
